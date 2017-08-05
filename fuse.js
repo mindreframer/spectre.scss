@@ -5,7 +5,7 @@ let tmp = "./tmp";
 const fuse = FuseBox.init({
   homeDir: ".",
   output: "dist/$name.js",
-  // sourceMaps: true,
+  sourceMaps: true,
   plugins: [
     [
       SassPlugin(),
@@ -19,9 +19,10 @@ const fuse = FuseBox.init({
 fuse.bundle("a").instructions(`>spectre.scss`);
 fuse.bundle("a").instructions(`>spectre-exp.scss`);
 fuse.bundle("a").instructions(`>spectre-icons.scss`);
-// debugger;
 fuse.run();
 
+// disable sourcemaps and enable minification
+fuse.opts.sourceMaps = false;
 fuse.opts.plugins = [
   [
     SassPlugin(),
