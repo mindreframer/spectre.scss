@@ -7,11 +7,18 @@
     "fuse": "node fuse.js",
     "fuse watch": "node fuse.js watch"
   },
-  "keywords": ["sass", "grid", "css-framework", "responsive-grid", "flexbox"],
+  "keywords": [
+    "sass",
+    "grid",
+    "css-framework",
+    "responsive-grid",
+    "flexbox"
+  ],
   "author": "Nusu Alabuğa",
   "license": "MIT",
   "devDependencies": {
     "fuse-box": "^2.2.1",
+    "fusebox-chain-plugin": "^1.0.7",
     "node-sass": "^4.5.3"
   }
 }

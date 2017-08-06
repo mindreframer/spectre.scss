@@ -41,6 +41,7 @@
 // fuse.run();
 
 const { FuseBox, Sparky, SassPlugin, CSSPlugin } = require("fuse-box");
+import { ChainPlugin } from "fusebox-chain-plugin";
 
 let fuse, app, isProduction;
 
@@ -56,6 +57,7 @@ Sparky.task("config", () => {
     ]);
   }
   if (!isProduction) {
+    // TODO: try https://github.com/unlight/fusebox-chain-plugin
     plugins.push([
       SassPlugin(),
       CSSPlugin({
