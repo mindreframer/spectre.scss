@@ -73,14 +73,17 @@ Sparky.task("config", () => {
     hash: isProduction,
     plugins: plugins
   });
-  app = fuse.bundle("a").watch("src/**").instructions(`>spectre.scss`);
+  app = fuse.bundle("a").instructions(`>spectre.scss`);
 });
 
 Sparky.task("clean", () => {
   return Sparky.src("dist/").clean("dist/");
 });
 
-Sparky.task("default", ["clean", "config"], () => fuse.run());
+Sparky.task("default", ["clean", "config"], () => {
+  app = fuse.bundle("a").watch("src/**").instructions(`>spectre.scss`);
+  fuse.run();
+});
 Sparky.task("set-production", () => {
   isProduction = true;
 });
